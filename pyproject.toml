@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-sales-data-manager"
+version = "0.1.0"
+description = "CLI application for cleaning and analyzing sales data"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
