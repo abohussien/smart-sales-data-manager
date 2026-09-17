@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 from typing import Any, Dict, Union
 
@@ -20,8 +21,28 @@ def run(
 
 def main() -> None:
     """Run the command-line application."""
-    input_path = Path("data/raw/sales.csv")
-    output_path = Path("data/output/clean_sales.csv")
+    parser = argparse.ArgumentParser(
+        description="Clean and analyze sales CSV data."
+    )
+
+    parser.add_argument(
+        "input",
+        nargs="?",
+        default="data/raw/sales.csv",
+        help="Path to the input CSV file.",
+    )
+
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="data/output/clean_sales.csv",
+        help="Path to the output CSV file.",
+    )
+
+    args = parser.parse_args()
+
+    input_path = Path(args.input)
+    output_path = Path(args.output)
 
     results = run(input_path, output_path)
 
