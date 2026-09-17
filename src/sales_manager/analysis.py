@@ -1,4 +1,7 @@
-def analyze_sales(rows):
+from typing import Any, Dict, List
+
+
+def analyze_sales(rows: List[Dict[str, str]]) -> Dict[str, Any]:
     """Analyze cleaned sales records."""
     total_sales = 0
     product_sales = {}

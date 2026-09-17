@@ -1,4 +1,7 @@
-def clean_sales_data(rows):
+from typing import Dict, List
+
+
+def clean_sales_data(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
     """Clean sales records by handling missing values and duplicates."""
     cleaned_rows = []
     seen = set()

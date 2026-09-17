@@ -1,11 +1,14 @@
 from pathlib import Path
+from typing import Any, Dict, Union
 
 from .analysis import analyze_sales
 from .cleaning import clean_sales_data
 from .io import read_sales_file, save_sales_file
 
 
-def run(input_path, output_path):
+def run(
+    input_path: Union[str, Path], output_path: Union[str, Path]
+) -> Dict[str, Any]:
     """Run the sales data processing workflow."""
     rows = read_sales_file(input_path)
     cleaned_rows = clean_sales_data(rows)
@@ -15,7 +18,7 @@ def run(input_path, output_path):
     return results
 
 
-def main():
+def main() -> None:
     """Run the command-line application."""
     input_path = Path("data/raw/sales.csv")
     output_path = Path("data/output/clean_sales.csv")
