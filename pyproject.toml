@@ -7,5 +7,8 @@ name = "smart-sales-data-manager"
 version = "0.1.0"
 description = "CLI application for cleaning and analyzing sales data"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
