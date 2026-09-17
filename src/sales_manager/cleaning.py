@@ -11,10 +11,13 @@ def clean_sales_data(rows):
 
         seen.add(row_key)
 
-        if not row["quantity"]:
-            row["quantity"] = "0"
+        cleaned_row = row.copy()
 
-        cleaned_rows.append(row)
+        if not cleaned_row["quantity"]:
+            cleaned_row["quantity"] = "0"
+
+        cleaned_rows.append(cleaned_row)
 
     return cleaned_rows
+
 
